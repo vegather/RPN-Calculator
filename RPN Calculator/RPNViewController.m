@@ -177,8 +177,9 @@
 
 - (IBAction)testCPressed:(UIButton *)sender
 {
-    self.testVariableValues = @{@"a" : [NSNumber numberWithInt:67],
-                                @"b" : [NSNumber numberWithInt:98]};
+    self.testVariableValues = @{@"a" : [NSNumber numberWithInt:-5],
+                                @"b" : [NSNumber numberWithInt:5],
+                                @"x" : [NSNumber numberWithInt:0]};
     
     [self updateLabels];
 }
