@@ -194,6 +194,7 @@
 
 - (void)updateLabels
 {
+    //Test of source control
     id outputOfProgram = [CalculatorBrain runProgram:self.brain.program usingVariableValue:self.testVariableValues];
     if ([outputOfProgram isKindOfClass:[NSNumber class]])
     {
