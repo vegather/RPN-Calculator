@@ -125,71 +125,6 @@
     return [self popOperandOffStack:stack];
 }
 
-/*+ (double)popOperandOffStack:(NSMutableArray *)stack
-{
-    //Sets result to 0 in case nothing works
-    double result = 0;
-    
-    //Gets the last object on the stack
-    id topOfStack = [stack lastObject];
-    //If the last object is not nil, remove it
-    if (topOfStack)
-    {
-        [stack removeLastObject];
-    }
-    
-    //If the last object on the stack is a number, simply add it to the result
-    if ([topOfStack isKindOfClass:[NSNumber class]])
-    {
-        result = [topOfStack doubleValue];
-    }
-    
-    //If the last object on the stack is a string, do the necessary calculations and
-    //add the result to "result"
-    else if ([topOfStack isKindOfClass:[NSString class]])
-    {
-        NSString *operation = topOfStack;
-        if ([operation isEqualToString:@"+"])
-        {
-            result = [self popOperandOffStack:stack] + [self popOperandOffStack:stack];
-        }
-        else if ([operation isEqualToString:@"-"])
-        {
-            double lastNumber = [self popOperandOffStack:stack];
-            result = [self popOperandOffStack:stack] - lastNumber;
-        }
-        else if ([operation isEqualToString:@"*"])
-        {
-            result = [self popOperandOffStack:stack] * [self popOperandOffStack:stack];
-        }
-        else if ([operation isEqualToString:@"/"])
-        {
-            double devider = [self popOperandOffStack:stack];
-            if (devider != 0)
-            {
-                result = [self popOperandOffStack:stack] / devider;
-            }
-        }
-        else if ([operation isEqualToString:@"sin"])
-        {
-            result = sin([self popOperandOffStack:stack]);
-        }
-        else if ([operation isEqualToString:@"cos"])
-        {
-            result = cos([self popOperandOffStack:stack]);
-        }
-        else if ([operation isEqualToString:@"sqrt"])
-        {
-            result = sqrt([self popOperandOffStack:stack]);
-        }
-        else if ([operation isEqualToString:@"π"])
-        {
-            result = M_PI;
-        }
-    }
-    return result;
-}*/
-
 + (id)popOperandOffStack:(NSMutableArray *)stack
 {
     //Sets result to 0 in case nothing works
@@ -286,12 +221,10 @@
     if ([program isKindOfClass:[NSArray class]])
     {
         NSMutableArray *stack = [program mutableCopy];
-        NSLog(@"stack: %@", stack);
         while ([stack count] != 0)
         {
             NSString *component = [self descriptionOfTopOfStack:stack];
             [componentsArray addObject:component];
-            NSLog(@"components: %@", componentsArray);
         }
     }
     return [componentsArray componentsJoinedByString:@", "];
