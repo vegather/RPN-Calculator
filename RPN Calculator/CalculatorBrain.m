@@ -153,52 +153,115 @@
         NSString *operation = topOfStack;
         if ([operation isEqualToString:@"+"])
         {
-            double sum = [[self popOperandOffStack:stack]doubleValue] + [[self popOperandOffStack:stack]doubleValue];
-            result = [NSNumber numberWithDouble:sum];
+            id first = [self popOperandOffStack:stack];
+            id second = [self popOperandOffStack:stack];
+            if (first && second)
+            {
+                double sum = [first doubleValue] + [second doubleValue];
+                result = [NSNumber numberWithDouble:sum];
+            }
+            else
+            {
+                errorMessage = @"You need at least two operands before you can do this operation";
+            }
+            
         }
         else if ([operation isEqualToString:@"-"])
         {
-            double lastNumber = [[self popOperandOffStack:stack]doubleValue];
-            double subtractionResult = [[self popOperandOffStack:stack]doubleValue] - lastNumber;
-            result = [NSNumber numberWithDouble:subtractionResult];
+            id second = [self popOperandOffStack:stack];
+            id first = [self popOperandOffStack:stack];
+            if (second && first)
+            {
+                double subtractionResult = [first doubleValue] - [second doubleValue];
+                result = [NSNumber numberWithDouble:subtractionResult];
+            }
+            else
+            {
+                errorMessage = @"You need at least two operands before you can do this operation";
+            }
         }
         else if ([operation isEqualToString:@"*"])
         {
-            double product = [[self popOperandOffStack:stack]doubleValue] * [[self popOperandOffStack:stack]doubleValue];
-            result = [NSNumber numberWithDouble:product];
+            id first = [self popOperandOffStack:stack];
+            id second = [self popOperandOffStack:stack];
+            if (first && second)
+            {
+                double product = [first doubleValue] * [second doubleValue];
+                result = [NSNumber numberWithDouble:product];
+            }
+            else
+            {
+                errorMessage = @"You need at least two operands before you can do this operation";
+            }
+            
         }
         else if ([operation isEqualToString:@"/"])
         {
-            double devider = [[self popOperandOffStack:stack]doubleValue];
-            if (devider != 0)
+            
+            id devider = [self popOperandOffStack:stack];
+            id upperNumber = [self popOperandOffStack:stack];
+            if (devider && upperNumber)
             {
-                double divisionResult = [[self popOperandOffStack:stack]doubleValue] / devider;
-                result = [NSNumber numberWithDouble:divisionResult];
+                if (devider != 0)
+                {
+                    double divisionResult = [upperNumber doubleValue] / [devider doubleValue];
+                    result = [NSNumber numberWithDouble:divisionResult];
+                }
+                else
+                {
+                    errorMessage = @"You cannot devide by 0";
+                }
             }
             else
             {
-                errorMessage = @"You cannot devide by 0";
+                errorMessage = @"You need at least two operands before you can do this operation";
             }
+            
         }
         else if ([operation isEqualToString:@"sin"])
         {
-            result = [NSNumber numberWithDouble:sin([[self popOperandOffStack:stack]doubleValue])];
-        }
-        else if ([operation isEqualToString:@"cos"])
-        {
-            result = [NSNumber numberWithDouble:cos([[self popOperandOffStack:stack]doubleValue])];
-        }
-        else if ([operation isEqualToString:@"sqrt"])
-        {
-            NSNumber *rootNumber = [self popOperandOffStack:stack];
-            if ([rootNumber doubleValue] >= 0)
+            id number = [self popOperandOffStack:stack];
+            if (number)
             {
-                result = [NSNumber numberWithDouble:sqrt([rootNumber doubleValue])];
+                result = [NSNumber numberWithDouble:sin([number doubleValue])];
             }
             else
             {
-                errorMessage = @"You cannot square a number below 0";
+                errorMessage = @"You need at least one operand before you can do this operation";
             }
+            
+        }
+        else if ([operation isEqualToString:@"cos"])
+        {
+            id number = [self popOperandOffStack:stack];
+            if (number)
+            {
+                result = [NSNumber numberWithDouble:cos([number doubleValue])];
+            }
+            else
+            {
+                errorMessage = @"You need at least one operand before you can do this operation";
+            }
+        }
+        else if ([operation isEqualToString:@"sqrt"])
+        {
+            id rootNumber = [self popOperandOffStack:stack];
+            if (rootNumber)
+            {
+                if ([rootNumber doubleValue] >= 0)
+                {
+                    result = [NSNumber numberWithDouble:sqrt([rootNumber doubleValue])];
+                }
+                else
+                {
+                    errorMessage = @"You cannot square a number below 0";
+                }
+            }
+            else
+            {
+                errorMessage = @"You need at least one operand before you can do this operation";
+            }
+            
         }
         else if ([operation isEqualToString:@"π"])
         {

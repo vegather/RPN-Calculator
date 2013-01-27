@@ -100,10 +100,12 @@
 {
     //Push number to operand stack
     [self.brain pushOperand:[self.display.text doubleValue]];
-    NSLog(@"programStack is: %@", self.brain.program);
-    self.enteredCalculations.text = [CalculatorBrain descriptionOfProgram:self.brain.program];
     //User is no longer typing
     self.userIsInTheMiddleOfTypingANumber = NO;
+    //Update labels
+    [self updateLabels];
+    //Except display needs to be 0
+    self.display.text = @"0";
 }
 
 #pragma mark - Other Buttons
@@ -233,6 +235,8 @@
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
         [errorAlert show];
+        self.display.text = @"0";
+        [self.brain removeLastInput];
     }
     
     
