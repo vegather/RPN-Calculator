@@ -16,7 +16,6 @@
 
 //Hope this works
 //Hope this works as well
-//Push test
 
 @implementation CalculatorBrain
 @synthesize programStack = _programStack;
