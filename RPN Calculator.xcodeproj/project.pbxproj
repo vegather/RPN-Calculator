@@ -30,16 +30,16 @@
 		9A99426416AB20C3009C7D1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9A99426616AB20C3009C7D1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9A99426816AB20C3009C7D1D /* RPN Calculator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RPN Calculator-Prefix.pch"; sourceTree = "<group>"; };
-		9A99426916AB20C3009C7D1D /* RPNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPNAppDelegate.h; sourceTree = "<group>"; };
-		9A99426A16AB20C3009C7D1D /* RPNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPNAppDelegate.m; sourceTree = "<group>"; };
+		9A99426916AB20C3009C7D1D /* RPNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RPNAppDelegate.h; path = "RPN Calculator/RPNAppDelegate.h"; sourceTree = SOURCE_ROOT; };
+		9A99426A16AB20C3009C7D1D /* RPNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RPNAppDelegate.m; path = "RPN Calculator/RPNAppDelegate.m"; sourceTree = SOURCE_ROOT; };
 		9A99426C16AB20C3009C7D1D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9A99426E16AB20C3009C7D1D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9A99427016AB20C3009C7D1D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9A99427316AB20C3009C7D1D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		9A99427516AB20C3009C7D1D /* RPNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPNViewController.h; sourceTree = "<group>"; };
-		9A99427616AB20C3009C7D1D /* RPNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPNViewController.m; sourceTree = "<group>"; };
-		9A99427D16AB505E009C7D1D /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
-		9A99427E16AB505E009C7D1D /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrain.m; sourceTree = "<group>"; };
+		9A99427516AB20C3009C7D1D /* RPNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RPNViewController.h; path = "RPN Calculator/RPNViewController.h"; sourceTree = SOURCE_ROOT; };
+		9A99427616AB20C3009C7D1D /* RPNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RPNViewController.m; path = "RPN Calculator/RPNViewController.m"; sourceTree = SOURCE_ROOT; };
+		9A99427D16AB505E009C7D1D /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalculatorBrain.h; path = "RPN Calculator/CalculatorBrain.h"; sourceTree = SOURCE_ROOT; };
+		9A99427E16AB505E009C7D1D /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalculatorBrain.m; path = "RPN Calculator/CalculatorBrain.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 				9A99425616AB20C3009C7D1D /* RPN Calculator.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		9A99425916AB20C3009C7D1D /* Frameworks */ = {
 			isa = PBXGroup;
@@ -96,7 +96,7 @@
 				9A99426116AB20C3009C7D1D /* Supporting Files */,
 			);
 			path = "RPN Calculator";
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		9A99426116AB20C3009C7D1D /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -110,7 +110,8 @@
 				9A99427016AB20C3009C7D1D /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
+			path = "RPN Calculator";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -203,7 +204,8 @@
 				9A99427316AB20C3009C7D1D /* en */,
 			);
 			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
+			path = "RPN Calculator";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 
